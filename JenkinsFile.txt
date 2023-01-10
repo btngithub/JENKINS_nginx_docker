@@ -1,0 +1,27 @@
+pipeline {
+    agent { 
+        docker { 
+        image 'nginx:latest' 
+        label 'git' 
+        }
+        
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                sh "hostname"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing something'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying something somewhere'
+            }
+        }
+    }
+}
