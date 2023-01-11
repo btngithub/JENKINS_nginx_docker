@@ -9,7 +9,7 @@ pipeline {
                 sh "docker run -d --name nginx_almaz -p 81:80 nginx"
             }
         }
-    }
+    
         stage('Copy NGINX files') {
             steps {
                 sh "docker cp nginx.conf nginx_almaz:/etc/nginx/nginx.conf"
@@ -18,7 +18,8 @@ pipeline {
         }
         stage('Reload NGINGX config') {
             steps {
-                sh "docker exec -it nging_almaz ngingx -s reload"
+                sh "docker exec nginx_almaz nginx -s reload"
             }
         }
+    }   
 }
