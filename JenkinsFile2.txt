@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying something somewhere'
+                sh docker run -d --name nginx -p 81:80 nginx
             }
         }
     }
