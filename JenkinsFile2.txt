@@ -4,16 +4,6 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
-                sh "hostname"
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing something'
-            }
-        }
         stage('Deploy') {
             steps {
                 sh "docker run -d --name nginx -p 81:80 nginx"
