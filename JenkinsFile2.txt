@@ -12,8 +12,8 @@ pipeline {
     }
         stage('Copy NGINX files') {
             steps {
-                sh "docker cp "C:\Users\whate\OneDrive\Desktop\nginx.conf" nginx_almaz:/etc/nginx/nginx.conf"
-                sh "docker cp "C:\Users\whate\OneDrive\Desktop\index.html" nginx_almaz:/usr/share/nginx/html/index.html"
+                sh "docker cp nginx.conf nginx_almaz:/etc/nginx/nginx.conf"
+                sh "docker cp index.html nginx_almaz:/usr/share/nginx/html/index.html"
             }
         }
         stage('Reload NGINGX config') {
