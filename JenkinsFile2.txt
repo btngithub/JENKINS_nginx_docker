@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Reload NGINGX config') {
             steps {
-                sh "docker exec -it nginx_almaz nginx -s reload"
+                sh "docker exec nginx_almaz nginx -s reload"
             }
         }
     }   
